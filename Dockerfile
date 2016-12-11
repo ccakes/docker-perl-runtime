@@ -1,7 +1,8 @@
 FROM alpine:edge
+MAINTAINER cam.daniel@gmail.com
 
 # Basic dependencies
-RUN apk -U add git curl wget perl perl-dev libressl libressl-dev make gcc libc-dev
+RUN apk -U add tzdata git curl wget perl perl-dev libressl libressl-dev make gcc libc-dev
 
 # Extras
 RUN apk add postgresql-dev postgresql-libs
