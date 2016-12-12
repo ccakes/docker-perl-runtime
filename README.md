@@ -10,5 +10,5 @@ Also included is `postgres-libs` for DBD::Pg
 
 ```
 docker pull ccakes/perl-alpine
-docker run -it --rm -v $(pwd):/app -w /app carton exec -- perl my_app.pl
+docker run -it --rm -v $(pwd):/app -w /app ccakes/perl-alpine carton exec -- perl my_app.pl
 ```
