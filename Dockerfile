@@ -2,11 +2,13 @@ FROM alpine:edge
 MAINTAINER cam.daniel@gmail.com
 
 # Basic dependencies
-RUN apk -U add --no-cache \
-  tzdata git wget perl perl-dev libressl libressl-dev build-base
+RUN apk -U add --no-cache tzdata git curl wget perl perl-dev libressl libressl-dev make gcc libc-dev
 
 # Extras
-RUN apk add postgresql-dev
+RUN apk add --no-cache postgresql-dev unzip
+
+# Tidy up
+RUN rm /var/cache/apk/*
 
 RUN curl -L https://cpanmin.us/ -o /usr/local/bin/cpanm && \
     chmod +x /usr/local/bin/cpanm
